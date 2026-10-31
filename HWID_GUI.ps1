@@ -767,9 +767,21 @@ $lblWatermark.Text = 'Made by Mxg1cal'
 $lblWatermark.AutoSize = $true
 $lblWatermark.ForeColor = [System.Drawing.Color]::FromArgb(90, 90, 98)
 $lblWatermark.Font = New-Object System.Drawing.Font('Segoe UI', 8, [System.Drawing.FontStyle]::Italic)
-$lblWatermark.Location = New-Object System.Drawing.Point(880, 745)
+$lblWatermark.Location = New-Object System.Drawing.Point(805, 745)
 $form.Controls.Add($lblWatermark)
 $lblWatermark.BringToFront()
+
+$btnGitHub = New-Object System.Windows.Forms.LinkLabel
+$btnGitHub.Text = 'GitHub'
+$btnGitHub.AutoSize = $true
+$btnGitHub.LinkColor = $colAccent
+$btnGitHub.ActiveLinkColor = [System.Drawing.Color]::White
+$btnGitHub.VisitedLinkColor = $colAccent
+$btnGitHub.Font = New-Object System.Drawing.Font('Segoe UI', 8)
+$btnGitHub.Location = New-Object System.Drawing.Point(935, 745)
+$btnGitHub.Add_LinkClicked({ Start-Process 'https://github.com/Mxg1cal-dev/Advanced-HWID-Checker-Mac-Changer' })
+$form.Controls.Add($btnGitHub)
+$btnGitHub.BringToFront()
 
 Refresh-FileList
 [void]$form.ShowDialog()
